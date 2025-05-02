@@ -1,10 +1,10 @@
 module.exports = function reverse(num) {
-  throw new Error('Not implemented');
   let result = 0;
-  while (num) {
-    result = result + (num % 10);
-    num = Math.floor(num);
+  let innerNum = num;
+  while (innerNum) {
+    innerNum = Math.abs(innerNum);
+    result = result * 10 + (innerNum % 10);
+    innerNum = Math.floor(innerNum / 10);
   }
   return result;
 };
-reverse()
